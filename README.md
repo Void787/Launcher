@@ -1,14 +1,34 @@
 # Launcher
-version: net8.0
 
-create a config.json file in bin/debug/net8.0/
-there you can list all aplications and their paths and if it should be asked permission to launch before doing so.
+**Version:** `net8.0`
 
-![image](https://github.com/user-attachments/assets/d04faf46-e981-4a04-beb2-28f7b3e4d7dd)
+## Setup
 
-download: [config.json](https://github.com/user-attachments/files/17676569/config.json)
+To get started, create a `config.json` file in the `bin/debug/net8.0/` directory. In this file, you can list all applications with their paths, and specify whether each one should ask for permission before launching.
 
+![Example Config](https://github.com/user-attachments/assets/d04faf46-e981-4a04-beb2-28f7b3e4d7dd)
 
-types of profiles: allLaunch: launches all applications in the list and asks permission if thats stated with askpermission, 
-singleLaunch: shows a list of all applications/games that are listed in the profile. then you choose the number assighend to that applications/games.
-! remember that steam games can only be launched via the singleLaunch profile.
+Download a sample config file here: [config.json](https://github.com/user-attachments/files/17676569/config.json)
+
+## Profile Types
+
+The launcher supports two types of profiles:
+
+- **allLaunch**: Launches all applications listed in the config file. If `askpermission` is enabled for an application, the launcher will prompt you before starting it.
+  
+- **singleLaunch**: Displays a list of all applications/games specified in the profile. You can then select an application by entering its assigned number.
+  - *Note:* Steam games can only be launched through the `singleLaunch` profile.
+
+## Config Options
+
+Each entry in the configuration file can include the following keys:
+
+- **name**: Required for both profiles; specifies the application's name.
+- **path**: Required for both profiles; specifies the path to the application.
+- **askpermission**: Optional; used only in `allLaunch`. Determines if the user should be prompted before launching the application.
+- **issteamgame**: Optional; used only in `singleLaunch`. Indicates that the application is a Steam game.
+- **id**: Optional; used only in `singleLaunch`. Assigns an ID number to the application for selection purposes.
+
+## Contributing
+
+Want to edit the code? Create your own branch, and submit a pull request to the `development` branch when you're finished. Thank you!
