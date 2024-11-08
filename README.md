@@ -1,1 +1,2 @@
-# SchoolEntry
+# Launcher
+
